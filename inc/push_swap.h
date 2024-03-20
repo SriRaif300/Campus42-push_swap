@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 16:22:37 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:42:22 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		syntax_error(char **argv);
 int		dup_error(char **argv);
 void	print_error(void);
 
+/* utils */
 long	ft_atol(char *str);
 int		is_sort_list(t_stack *lst);
 t_stack	*ft_last_node(t_stack *lst);

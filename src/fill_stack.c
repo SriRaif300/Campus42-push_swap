@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:54:57 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/14 15:43:45 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:23:19 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	fill_stack(t_stack **a, char **argv)
 	int	num;
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		num = (int)ft_atol(argv[i]);

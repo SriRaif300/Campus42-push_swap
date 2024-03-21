@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:54:57 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 15:23:19 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:57:40 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,23 @@ void	fill_stack(t_stack **a, char **argv)
 		num = (int)ft_atol(argv[i]);
 		append_node(a, num);
 		i++;
+	}
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*next;
+
+	if (*stack && stack)
+	{
+		tmp = stack;
+		while (tmp)
+		{
+			next = tmp->next;
+			free(tmp);
+			tmp = next;
+		}
+		*stack = NULL;
 	}
 }

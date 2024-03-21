@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 18:08:22 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:46:52 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,15 @@ int	main(int argc, char **argv)
 	if (syntax_error(argv) || int_error(argv) || dup_error(argv))
 		print_error();
 	fill_stack(&a, argv);
-	//fill_stack(&b, argv);
-	/*if (!is_sort_list(a))
+	if (!is_sort_list(a))
 	{
-		printf("desordenada\n");
-	}*/
+		print_stack(a, 'a');
+		if (stack_len(a) == 2)
+			sa(&a, 0);
+		if (stack_len(a) == 3)
+			sort_three(&a);
+	}
+	print_stack(a, 'a');
 	/*print_stack(a, 'a');
 	print_stack(b, 'b');
 	rrr(&a ,&b, 0);

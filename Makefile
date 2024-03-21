@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 10:07:56 by cgaratej          #+#    #+#              #
-#    Updated: 2024/03/20 16:23:02 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/03/21 11:45:31 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ GREEN= \033[0;32m
 SRC= src/push_swap.c \
 	src/error_control.c \
 	src/utils_stack.c \
+	src/utils_sort.c \
 	src/fill_stack.c \
 	commands/swap.c \
 	commands/push.c \

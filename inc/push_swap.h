@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 17:42:22 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:47:55 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,12 @@ void	print_error(void);
 
 /* utils */
 long	ft_atol(char *str);
-int		is_sort_list(t_stack *lst);
-t_stack	*ft_last_node(t_stack *lst);
+int		is_sort_list(t_stack *stack);
+t_stack	*ft_last_node(t_stack *stack);
 void	fill_stack(t_stack **a, char **argv);
+int		stack_len(t_stack *stack);
+t_stack	*max_node(t_stack *stack);
+void	sort_three(t_stack **a);
 
 /* Commands */
 void	sa(t_stack **a, int check);

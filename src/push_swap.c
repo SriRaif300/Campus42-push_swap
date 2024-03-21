@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 11:46:52 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:37:02 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	print_stack(t_stack *stack, char c)
 {
-	printf("Contenido de la pila %c:\n", c);
+	printf("Contenido del stack %c:\n", c);
 	while (stack != NULL)
 	{
-		printf("%d\n", stack->num);
+		printf("%d\n", stack->num); 
 		stack = stack->next;
 	}
 }

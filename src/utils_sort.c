@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:32:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 11:47:48 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:27:06 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,32 @@ void	sort_three(t_stack **a)
 		rra(a, 0);
 	if ((*a)->next->num < (*a)->num)
 		sa(a, 0);
+}
+
+void	set_post(t_stack *stack)
+{
+	int	mediana;
+	int	i;
+
+	i = 0;
+	mediana = stack_len(stack);
+	if (mediana % 2 == 0)
+		mediana /= 2;
+	else
+		mediana = (mediana + 1) / 2;
+	while (stack)
+	{
+		if (i < mediana)
+		{
+			stack->above_median = 1;
+			stack->pos = i;
+		}
+		else
+		{
+			stack->above_median = 0;
+			stack->pos = i;
+		}
+		i++;
+		stack = stack->next;
+	}
 }

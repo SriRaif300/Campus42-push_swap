@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 11:47:55 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:39:11 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_stack	*ft_last_node(t_stack *stack);
 void	fill_stack(t_stack **a, char **argv);
 int		stack_len(t_stack *stack);
 t_stack	*max_node(t_stack *stack);
+t_stack	*min_node(t_stack *stack);
 void	sort_three(t_stack **a);
 
 /* Commands */

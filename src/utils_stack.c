@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:23:08 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 11:52:46 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:10:44 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_stack	*max_node(t_stack *stack)
 	return (max_node);
 }
 
-t_stack	*max_node(t_stack *stack)
+t_stack	*min_node(t_stack *stack)
 {
 	int		min;
 	t_stack	*min_node;

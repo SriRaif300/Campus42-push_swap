@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:28 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 15:58:59 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:41:29 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	push(t_stack **origin, t_stack **dest)
 	*origin = (*origin)->next;
 	if (*origin)
 		(*origin)->prev = NULL;
-	if (!dest)
+	if (!*dest)
 	{
 		*dest = frist_node;
 		(*dest)->next = NULL;

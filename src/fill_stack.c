@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:54:57 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 11:57:40 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:46:33 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	free_stack(t_stack **stack)
 
 	if (*stack && stack)
 	{
-		tmp = stack;
+		tmp = *stack;
 		while (tmp)
 		{
 			next = tmp->next;

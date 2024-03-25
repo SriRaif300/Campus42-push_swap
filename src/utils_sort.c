@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:32:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 16:27:06 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:25:48 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,19 @@ void	sort_three(t_stack **a)
 
 void	set_post(t_stack *stack)
 {
-	int	mediana;
+	int	median;
 	int	i;
+	int	*array;
+	int	len;
 
 	i = 0;
-	mediana = stack_len(stack);
-	if (mediana % 2 == 0)
-		mediana /= 2;
-	else
-		mediana = (mediana + 1) / 2;
+	len = stack_len(stack);
+	array = get_array_nums(stack);
+	median = find_median(array, 0, len);
+	free(array);
 	while (stack)
 	{
-		if (i < mediana)
+		if (i < median)
 		{
 			stack->above_median = 1;
 			stack->pos = i;

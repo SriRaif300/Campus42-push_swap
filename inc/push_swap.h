@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/21 15:39:11 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:55:09 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ int		stack_len(t_stack *stack);
 t_stack	*max_node(t_stack *stack);
 t_stack	*min_node(t_stack *stack);
 void	sort_three(t_stack **a);
+void	set_post(t_stack *stack);
+int		find_median(int *array, int median, int len);
+int		*get_array_nums(t_stack *stack);
+void	sort(t_stack **a, t_stack **b);
 
 /* Commands */
 void	sa(t_stack **a, int check);

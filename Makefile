@@ -6,7 +6,7 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 10:07:56 by cgaratej          #+#    #+#              #
-#    Updated: 2024/03/25 16:31:33 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/03/27 13:29:48 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ SRC= commands/swap.c \
 	src/error_control.c \
 	src/utils_stack.c \
 	src/utils_sort.c \
+	src/utils_push.c \
 	src/fill_stack.c \
-	src/find_median.c \
 	src/sort.c
 
 OBJ= $(SRC:.c=.o)

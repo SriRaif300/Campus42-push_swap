@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/25 15:55:09 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:33:37 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_stack
 {
 	int				num;
-	int				pos;
+	int				index;
 	int				above_median;
 	int				min_mov;
 	struct s_stack	*target;
@@ -47,7 +47,9 @@ void	sort_three(t_stack **a);
 void	set_post(t_stack *stack);
 int		find_median(int *array, int median, int len);
 int		*get_array_nums(t_stack *stack);
-void	sort(t_stack **a, t_stack **b);
+void	sort(t_stack **a, t_stack **b, int len);
+void	set_min_mov(t_stack *a, t_stack *b);
+t_stack	*get_node_min_move(t_stack *stack);
 
 /* Commands */
 void	sa(t_stack **a, int check);

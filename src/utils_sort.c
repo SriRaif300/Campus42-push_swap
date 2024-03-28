@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:32:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/25 15:25:48 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:32:51 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,45 @@ void	set_post(t_stack *stack)
 {
 	int	median;
 	int	i;
-	int	*array;
-	int	len;
 
 	i = 0;
-	len = stack_len(stack);
-	array = get_array_nums(stack);
-	median = find_median(array, 0, len);
-	free(array);
+	median = stack_len(stack);
+	if (median % 2 == 0)
+		median /= 2;
+	else
+		median = (median + 1) / 2;
 	while (stack)
 	{
 		if (i < median)
 		{
 			stack->above_median = 1;
-			stack->pos = i;
+			stack->index = i;
 		}
 		else
 		{
 			stack->above_median = 0;
-			stack->pos = i;
+			stack->index = i;
 		}
 		i++;
 		stack = stack->next;
 	}
+}
+
+t_stack	*get_node_min_move(t_stack *stack)
+{
+	int		min_mov;
+	t_stack	*node;
+
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->min_mov < min_mov)
+		{
+			min_mov = stack->min_mov;
+			node = stack;
+		}
+		stack = stack->next;
+	}
+	return (node);
 }

@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:30:58 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/27 17:58:26 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/02 12:48:06 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	min_target(t_stack *a, t_stack *b)
 	{
 		min = INT_MIN;
 		tmp = b;
-		a->target = max_node(b);
+		a->target = get_max_node(b);
 		while (tmp)
 		{
 			if (a->num > tmp->num && tmp->num >= min)
@@ -35,28 +35,29 @@ static void	min_target(t_stack *a, t_stack *b)
 	}
 }
 
-/*static void	max_target(t_stack *a, t_stack *b)
+static void	max_target(t_stack *b, t_stack *a)
 {
 	int		max;
 	t_stack	*tmp;
 
-	while (a)
+	while (b)
 	{
 		max = INT_MAX;
-		tmp = b;
-		a->target = min_node(b);
+		tmp = a;
+		b->target = get_min_node(a);
 		while (tmp)
 		{
-			if (a->num < tmp->num && tmp->num <= max)
+			if (b->num < tmp->num && tmp->num <= max)
 			{
 				max = tmp->num;
-				a->target = tmp;
+				b->target = tmp;
 			}
 			tmp = tmp->next;
 		}
-		a = a->next;
+		b = b->next;
 	}
-}*/
+}
+
 static void	stack_a_in_stack_b(t_stack **a, t_stack **b)
 {
 	t_stack	*node_tmp;
@@ -71,9 +72,15 @@ static void	stack_a_in_stack_b(t_stack **a, t_stack **b)
 			while (*a != node_tmp && *b != node_tmp->target)
 				rrr(a, b, 0);
 	}
-	node_min_move_top(a, node_tmp, 1);
-	node_min_move_top(a, node_tmp->target, 0);
+	min_move_on_top(a, node_tmp, 1);
+	min_move_on_top(b, node_tmp->target, 0);
 	pb(a, b, 0);
+}
+
+static void	stack_b_in_stack_a(t_stack **a, t_stack **b)
+{
+	min_move_on_top(a, (*b)->target, 1);
+	pa(a, b, 0);
 }
 
 void	sort(t_stack **a, t_stack **b, int len)
@@ -89,6 +96,15 @@ void	sort(t_stack **a, t_stack **b, int len)
 		set_post(*b);
 		min_target(*a, *b);
 		set_min_mov(*a, *b);
+		stack_a_in_stack_b(a, b);
 	}
 	sort_three(a);
+	while (*b)
+	{
+		set_post(*a);
+		set_post(*b);
+		max_target(*b, *a);
+		stack_b_in_stack_a(a, b);
+	}
+	move_min_on_top(a);
 }

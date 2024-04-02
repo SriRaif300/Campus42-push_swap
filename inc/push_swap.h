@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/27 17:33:37 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/02 13:34:16 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
+//# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -41,15 +41,15 @@ int		is_sort_list(t_stack *stack);
 t_stack	*ft_last_node(t_stack *stack);
 void	fill_stack(t_stack **a, char **argv);
 int		stack_len(t_stack *stack);
-t_stack	*max_node(t_stack *stack);
-t_stack	*min_node(t_stack *stack);
-void	sort_three(t_stack **a);
+t_stack	*get_max_node(t_stack *stack);
+t_stack	*get_min_node(t_stack *stack);
 void	set_post(t_stack *stack);
-int		find_median(int *array, int median, int len);
-int		*get_array_nums(t_stack *stack);
-void	sort(t_stack **a, t_stack **b, int len);
 void	set_min_mov(t_stack *a, t_stack *b);
 t_stack	*get_node_min_move(t_stack *stack);
+void	min_move_on_top(t_stack **stack, t_stack *tmp, int bol);
+void	move_min_on_top(t_stack **stack);
+void	sort_three(t_stack **a);
+void	sort(t_stack **a, t_stack **b, int len);
 
 /* Commands */
 void	sa(t_stack **a, int check);

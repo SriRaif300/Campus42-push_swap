@@ -6,13 +6,13 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/27 12:43:42 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/02 13:34:24 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	print_stack(t_stack *stack, char c)
+/*void	print_stack(t_stack *stack, char c)
 {
 	printf("\nContenido del stack %c:\n", c);
 	while (stack != NULL)
@@ -20,7 +20,7 @@ void	print_stack(t_stack *stack, char c)
 		printf("%d\n", stack->num);
 		stack = stack->next;
 	}
-}
+}*/
 
 int	main(int argc, char **argv)
 {
@@ -42,16 +42,11 @@ int	main(int argc, char **argv)
 			sort_three(&a);
 		else
 		{
-			print_stack(a, 'a');
+			/*if (stack_len(a) >= 5)
+				sort_five(&a, &b);
+			else*/
 			sort(&a, &b, stack_len(a));
-			print_stack(a, 'a');
-			print_stack(b, 'b');
 		}
 	}
-	/*print_stack(a, 'a');
-	print_stack(b, 'b');
-	rrr(&a ,&b, 0);
-	print_stack(a, 'a');
-	print_stack(b, 'b');*/
 	return (0);
 }

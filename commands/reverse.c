@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:08:33 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 16:23:19 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/02 12:13:29 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static void	reverse(t_stack **stack)
 		return ;
 	last_node = ft_last_node(*stack);
 	frist_node = *stack;
-	*stack = last_node;
+	last_node->next = *stack;
 	last_node->prev->next = NULL;
-	last_node->prev = NULL;
-	last_node->next = frist_node;
-	frist_node->prev = frist_node;
+	frist_node->prev = last_node;
+	*stack = (*stack)->prev;
+	(*stack)->prev = NULL;
 }
 
 void	rra(t_stack **a, int check)

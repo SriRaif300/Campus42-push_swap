@@ -6,13 +6,13 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 10:07:56 by cgaratej          #+#    #+#              #
-#    Updated: 2024/03/27 13:29:48 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/02 13:34:44 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= push_swap
 CC= cc
-CFLAGS= -Wall -Werror -Wextra
+CFLAGS= -Wall -Wextra -Werror
 RM= rm -f
 INCLUDE= inc/push_swap.h Makefile
 GREEN= \033[0;32m

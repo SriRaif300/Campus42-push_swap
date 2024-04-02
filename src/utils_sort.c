@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:32:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/27 17:32:51 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/02 12:37:37 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort_three(t_stack **a)
 {
 	int	max;
 
-	max = max_node(*a)->num;
+	max = get_max_node(*a)->num;
 	if ((*a)->num == max)
 		ra(a, 0);
 	else if ((*a)->next->num == max)
@@ -60,6 +60,7 @@ t_stack	*get_node_min_move(t_stack *stack)
 
 	if (!stack)
 		return (NULL);
+	min_mov = INT_MAX;
 	while (stack)
 	{
 		if (stack->min_mov < min_mov)
@@ -70,4 +71,39 @@ t_stack	*get_node_min_move(t_stack *stack)
 		stack = stack->next;
 	}
 	return (node);
+}
+
+void	min_move_on_top(t_stack **stack, t_stack *tmp, int bol)
+{
+	while (*stack != tmp)
+	{
+		if (tmp->above_median)
+		{
+			if (bol)
+				ra(stack, 0);
+			else
+				rb(stack, 0);
+		}
+		else
+		{
+			if (bol)
+				rra(stack, 0);
+			else
+				rrb(stack, 0);
+		}
+	}
+}
+
+void	move_min_on_top(t_stack **stack)
+{
+	t_stack	*min_node;
+
+	min_node = get_min_node(*stack);
+	while (*stack != min_node)
+	{
+		if (min_node->above_median)
+			ra(stack, 0);
+		else
+			rra(stack, 0);
+	}
 }

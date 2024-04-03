@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:38:59 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 16:03:56 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:32:28 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,21 @@ static void	rotate(t_stack **stack)
 	frist_node->prev = last_node;
 }
 
-void	ra(t_stack **a, int check)
+void	ra(t_stack **a)
 {
 	rotate(a);
-	if (!check)
-		write(1, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **b, int check)
+void	rb(t_stack **b)
 {
 	rotate(b);
-	if (!check)
-		write(1, "rb\n", 3);
+	write(1, "rb\n", 3);
 }
 
-void	rr(t_stack **a, t_stack **b, int check)
+void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
-	if (!check)
-		write(1, "rr\n", 3);
+	write(1, "rr\n", 3);
 }

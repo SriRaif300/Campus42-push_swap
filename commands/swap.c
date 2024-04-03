@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:26:26 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 14:35:53 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:32:54 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,30 +29,27 @@ static void	swap(t_stack **stack)
 	}
 }
 
-void	sa(t_stack **a, int check)
+void	sa(t_stack **a)
 {
 	if (!*a)
 		return ;
 	swap(a);
-	if (!check)
-		write(1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack **b, int check)
+void	sb(t_stack **b)
 {
 	if (!*b)
 		return ;
 	swap(b);
-	if (!check)
-		write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **a, t_stack **b, int check)
+void	ss(t_stack **a, t_stack **b)
 {
 	if (!*a || !*b)
 		return ;
 	swap(a);
 	swap(b);
-	if (!check)
-		write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }

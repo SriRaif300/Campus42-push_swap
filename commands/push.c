@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:28 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/25 16:41:29 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:31:59 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,18 @@ static void	push(t_stack **origin, t_stack **dest)
 	}
 }
 
-void	pa(t_stack **a, t_stack **b, int check)
+void	pa(t_stack **a, t_stack **b)
 {
 	if (!b)
 		return ;
 	push(b, a);
-	if (!check)
-		write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **a, t_stack **b, int check)
+void	pb(t_stack **a, t_stack **b)
 {
 	if (!a)
 		return ;
 	push(a, b);
-	if (!check)
-		write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }

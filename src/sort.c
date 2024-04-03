@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 11:30:58 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/02 12:48:06 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:30:26 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,29 +67,31 @@ static void	stack_a_in_stack_b(t_stack **a, t_stack **b)
 	{
 		if (node_tmp->above_median)
 			while (*a != node_tmp && *b != node_tmp->target)
-				rr(a, b, 0);
+				rr(a, b);
 		else
 			while (*a != node_tmp && *b != node_tmp->target)
-				rrr(a, b, 0);
+				rrr(a, b);
 	}
 	min_move_on_top(a, node_tmp, 1);
 	min_move_on_top(b, node_tmp->target, 0);
-	pb(a, b, 0);
+	pb(a, b);
 }
 
 static void	stack_b_in_stack_a(t_stack **a, t_stack **b)
 {
 	min_move_on_top(a, (*b)->target, 1);
-	pa(a, b, 0);
+	pa(a, b);
 }
 
-void	sort(t_stack **a, t_stack **b, int len)
+void	sort(t_stack **a, t_stack **b, int five)
 {
 	int	i;
+	int	len;
 
 	i = 0;
+	len = stack_len(*a);
 	while (i++ < 2 && len-- > 3 && !is_sort_list(*a))
-		pb(a, b, 0);
+		pb(a, b);
 	while (len-- > 3 && !is_sort_list(*a))
 	{
 		set_post(*a);
@@ -106,5 +108,5 @@ void	sort(t_stack **a, t_stack **b, int len)
 		max_target(*b, *a);
 		stack_b_in_stack_a(a, b);
 	}
-	move_min_on_top(a);
+	move_min_on_top(a, five);
 }

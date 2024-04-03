@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:08:33 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/02 12:13:29 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:31:27 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,21 @@ static void	reverse(t_stack **stack)
 	(*stack)->prev = NULL;
 }
 
-void	rra(t_stack **a, int check)
+void	rra(t_stack **a)
 {
 	reverse(a);
-	if (!check)
-		write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack **b, int check)
+void	rrb(t_stack **b)
 {
 	reverse(b);
-	if (!check)
-		write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **a, t_stack **b, int check)
+void	rrr(t_stack **a, t_stack **b)
 {
 	reverse(a);
 	reverse(b);
-	if (!check)
-		write(1, "rrr\n", 4);
+	write(1, "rrr\n", 4);
 }

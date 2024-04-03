@@ -6,21 +6,11 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/02 13:34:24 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:30:32 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-/*void	print_stack(t_stack *stack, char c)
-{
-	printf("\nContenido del stack %c:\n", c);
-	while (stack != NULL)
-	{
-		printf("%d\n", stack->num);
-		stack = stack->next;
-	}
-}*/
 
 int	main(int argc, char **argv)
 {
@@ -37,16 +27,14 @@ int	main(int argc, char **argv)
 	if (!is_sort_list(a))
 	{
 		if (stack_len(a) == 2)
-			sa(&a, 0);
+			sa(&a);
 		else if (stack_len(a) == 3)
 			sort_three(&a);
+		else if (stack_len(a) >= 5)
+			sort(&a, &b, 1);
 		else
-		{
-			/*if (stack_len(a) >= 5)
-				sort_five(&a, &b);
-			else*/
-			sort(&a, &b, stack_len(a));
-		}
+			sort(&a, &b, 0);
 	}
+	free_stack(&a);
 	return (0);
 }

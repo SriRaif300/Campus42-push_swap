@@ -6,16 +6,17 @@
 #    By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 10:07:56 by cgaratej          #+#    #+#              #
-#    Updated: 2024/04/02 13:34:44 by cgaratej         ###   ########.fr        #
+#    Updated: 2024/04/03 11:38:59 by cgaratej         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= push_swap
 CC= cc
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS=  -Wall -Werror -Wextra
 RM= rm -f
 INCLUDE= inc/push_swap.h Makefile
 GREEN= \033[0;32m
+RED = \033[31m
 
 SRC= commands/swap.c \
 	commands/push.c \
@@ -35,16 +36,19 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INLCUDE)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "\n$(GREEN)Create $(NAME) ✔\n"
+	@echo "\n$(GREEN)$(NAME) Create ✔\n"
 
 %.o: %.c $(INCLUDE)
 	$(CC) $(CFLAGS) -o $@ -c $<
+	@echo "$(GREEN)File $< compiled ✔\033[0m"
 	
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
+	@echo "$(RED)Deleted .o files\033[0m"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(RED)$(NAME) Deleted\033[0m"
 
 re: fclean all
 

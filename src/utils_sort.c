@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:32:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/02 12:37:37 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:30:59 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	sort_three(t_stack **a)
 
 	max = get_max_node(*a)->num;
 	if ((*a)->num == max)
-		ra(a, 0);
+		ra(a);
 	else if ((*a)->next->num == max)
-		rra(a, 0);
+		rra(a);
 	if ((*a)->next->num < (*a)->num)
-		sa(a, 0);
+		sa(a);
 }
 
 void	set_post(t_stack *stack)
@@ -80,30 +80,40 @@ void	min_move_on_top(t_stack **stack, t_stack *tmp, int bol)
 		if (tmp->above_median)
 		{
 			if (bol)
-				ra(stack, 0);
+				ra(stack);
 			else
-				rb(stack, 0);
+				rb(stack);
 		}
 		else
 		{
 			if (bol)
-				rra(stack, 0);
+				rra(stack);
 			else
-				rrb(stack, 0);
+				rrb(stack);
 		}
 	}
 }
 
-void	move_min_on_top(t_stack **stack)
+void	move_min_on_top(t_stack **stack, int five)
 {
 	t_stack	*min_node;
 
 	min_node = get_min_node(*stack);
 	while (*stack != min_node)
 	{
-		if (min_node->above_median)
-			ra(stack, 0);
+		if (five)
+		{
+			if (!min_node->above_median)
+				ra(stack);
+			else
+				rra(stack);
+		}
 		else
-			rra(stack, 0);
+		{
+			if (!min_node->above_median)
+				ra(stack);
+			else
+				rra(stack);
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:35:05 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/20 18:17:08 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:00:11 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_error(void)
 {
 	write(2, "Error\n", 6);
-	return ;
+	exit (1);
 }
 
 long	ft_atol(char *str)

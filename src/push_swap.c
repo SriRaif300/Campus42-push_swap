@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:09 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/03 11:30:32 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:40:23 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1)
 		return (0);
+	check_u_long_max(argv);
 	if (syntax_error(argv) || int_error(argv) || dup_error(argv))
 		print_error();
 	fill_stack(&a, argv);

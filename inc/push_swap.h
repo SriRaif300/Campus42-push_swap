@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:10:23 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/04/03 11:30:09 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:39:27 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		int_error(char **argv);
 int		syntax_error(char **argv);
 int		dup_error(char **argv);
 void	print_error(void);
+void	check_u_long_max(char **argv);
 
 /* utils */
 long	ft_atol(char *str);

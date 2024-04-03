@@ -6,7 +6,7 @@
 /*   By: cgaratej <cgaratej@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:54:57 by cgaratej          #+#    #+#             */
-/*   Updated: 2024/03/25 13:46:33 by cgaratej         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:41:05 by cgaratej         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,29 @@ void	free_stack(t_stack **stack)
 			tmp = next;
 		}
 		*stack = NULL;
+	}
+}
+
+void	check_u_long_max(char **argv)
+{
+	int	is_zero;
+	int	i;
+	int	j;
+
+	i = 1;
+	is_zero = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j] == '0')
+		{
+			j++;
+			is_zero++;
+		}
+		while (argv[i][j])
+			j++;
+		if (j - is_zero > 11)
+			print_error();
+		i++;
 	}
 }

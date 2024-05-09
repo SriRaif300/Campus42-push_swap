@@ -110,7 +110,7 @@ void	move_min_on_top(t_stack **stack, int five)
 		}
 		else
 		{
-			if (!min_node->above_median)
+			if (min_node->above_median)
 				ra(stack);
 			else
 				rra(stack);
